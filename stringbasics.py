@@ -1,0 +1,12 @@
+name = 'sai'
+print(len(name))
+print(name[0])
+print(name.find('i'))
+print(name.capitalize())
+print(name.upper())
+print(name.lower())
+print(name.isdigit())
+print(name.isalpha())
+print(name.count('o'))
+print(name.replace('a','o'))
+print(name *5)

@@ -9,3 +9,4 @@ CI = A - P
 
 print("Final Amount =", A)
 print("Compound Interest =", CI)
+

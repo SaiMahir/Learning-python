@@ -1,6 +1,6 @@
 import math
 
-pi = 3.14
+pi = 16
 
 print(round(pi))
 print(math.ceil(pi))

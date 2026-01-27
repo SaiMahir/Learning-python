@@ -84,6 +84,23 @@ Section 12: Problem Solving
     12.1 Count Element Occurrences
     12.2 Find Repeated Elements & Negatives
     12.3 Count with Validation
+
+Section 13: Lambda Functions
+    13.1 Lambda Basics - Anonymous Functions
+    13.2 Lambda with List Comprehension
+
+Section 14: List Comprehension
+    14.1 List Comprehension - Concise List Creation
+
+Section 15: Filter and Reduce
+    15.1 Filter and Reduce Functions
+
+Section 16: Dynamic Lists
+    16.1 Dynamic List with Even/Odd Sum
+
+Section 17: Matrix Operations
+    17.1 Matrix Addition
+    17.2 Matrix Multiplication
 '''
 doc.add_paragraph(toc)
 doc.add_page_break()
@@ -1047,6 +1064,204 @@ if neg_count != 0:
     print("Number of negative elements:", neg_count)
 else:
     print("No negative element found")""").font.name = 'Consolas'
+
+doc.add_paragraph()
+doc.add_page_break()
+
+# ============== SECTION 13: LAMBDA FUNCTIONS ==============
+doc.add_heading('Section 13: Lambda Functions', level=1)
+
+# 13.1 Lambda Basics
+doc.add_heading('13.1 Lambda Basics - Anonymous Functions (lambda.py)', level=2)
+doc.add_paragraph('Summary: A lambda function is a small, one-line anonymous function defined using the lambda keyword instead of def. Lambda functions can take any number of arguments but can only have one expression. They are useful for short, simple operations.')
+code = doc.add_paragraph()
+code.add_run('''#A lambda function is a small, one-line function defined using the lambda keyword instead of def.
+n = int(input("Enter a number: "))
+p = int(input("enter a number: "))
+
+sqr = lambda x: x*x              # Square of a number
+add = lambda x,y : x+y           # Addition of two numbers
+sub = lambda x,y: x-y            # Subtraction
+multiply = lambda x,y: x*y       # Multiplication
+divide = lambda x,y: x/y         # Division
+gi = lambda x,y: x if x>y else y # Greater of two numbers
+
+print(sqr(n))          # Output: n squared
+print(add(n,p))        # Output: n + p
+print(sub(n,p))        # Output: n - p
+print(multiply(n,p))   # Output: n * p
+print(divide(n,p))     # Output: n / p
+print(gi(n,p))         # Output: greater of n and p''').font.name = 'Consolas'
+
+doc.add_paragraph()
+
+# 13.2 Lambda with List Comprehension
+doc.add_heading('13.2 Lambda with List Comprehension (example.py)', level=2)
+doc.add_paragraph('Summary: Combining lambda functions with list comprehension for powerful filtering. This example filters names that start with a specific letter using an inline lambda function.')
+code = doc.add_paragraph()
+code.add_run('''names = ["Saima", "Ayesha", "Zainab", "Amna"]
+
+# Filter names starting with "A" using lambda inside list comprehension
+a_names = [name for name in names if (lambda name: name.startswith("A"))(name)]
+
+print(a_names)  # Output: ['Ayesha', 'Amna']''').font.name = 'Consolas'
+
+doc.add_paragraph()
+
+# ============== SECTION 14: LIST COMPREHENSION ==============
+doc.add_heading('Section 14: List Comprehension', level=1)
+
+# 14.1 List Comprehension
+doc.add_heading('14.1 List Comprehension - Concise List Creation (ListComprehention.py)', level=2)
+doc.add_paragraph('Summary: List comprehension is a concise and readable way to create lists in Python using a single line of code instead of writing long loops. Syntax: [expression for item in iterable if condition]. It makes code more Pythonic and efficient.')
+code = doc.add_paragraph()
+code.add_run('''#List comprehension is a concise way to create lists
+
+# Examples of list comprehension:
+# lst = [i*i for i in range(1,11)]       # Squares of 1-10
+# lst1 = [i for i in range(1,11) if i%2 != 0]  # Odd numbers 1-10
+# lst2 = [i*i for i in range(1,11)]      # Squares of 1-10
+
+# Practical example: Celsius to Fahrenheit conversion
+celcius = [0, 10, 20, 34.5]
+farenheit = [(9/5)*i + 32 for i in celcius]
+
+print(farenheit)  # Output: [32.0, 50.0, 68.0, 94.1]
+
+# Formula: F = (9/5)*C + 32
+# Each Celsius value is converted to Fahrenheit in one line!''').font.name = 'Consolas'
+
+doc.add_paragraph()
+
+# ============== SECTION 15: FILTER AND REDUCE ==============
+doc.add_heading('Section 15: Filter and Reduce', level=1)
+
+# 15.1 Filter and Reduce
+doc.add_heading('15.1 Filter and Reduce Functions (ReduceFilter.py)', level=2)
+doc.add_paragraph('Summary: The filter() function filters elements from an iterable based on a condition (returns True/False). The reduce() function (from functools) applies a function cumulatively to reduce an iterable to a single value. Both work excellently with lambda functions.')
+code = doc.add_paragraph()
+code.add_run('''# FILTER FUNCTION
+# The filter() function filters elements based on a condition
+# Example: Filter even numbers from user input
+
+lst = map(int, input("enter numbers: ").split())
+even_numbers = filter(lambda x: x % 2 == 0, lst)
+print("Even numbers are:", list(even_numbers))
+
+# REDUCE FUNCTION
+# The reduce() function reduces an iterable to a single value
+from functools import reduce
+
+numbers = map(int, input("enter numbers: ").split())
+product = reduce(lambda a, b: a * b, numbers)
+print("Product of all numbers:", product)
+
+# How reduce works:
+# Input: 2 3 4 -> reduce multiplies: 2*3=6, then 6*4=24
+# Output: 24''').font.name = 'Consolas'
+
+doc.add_paragraph()
+
+# ============== SECTION 16: DYNAMIC LISTS ==============
+doc.add_heading('Section 16: Dynamic Lists', level=1)
+
+# 16.1 Dynamic List
+doc.add_heading('16.1 Dynamic List with Even/Odd Sum (dynamiclist.py)', level=2)
+doc.add_paragraph('Summary: Create a list dynamically by taking user input for the number of elements, then appending each element. This example also demonstrates calculating separate sums for even and odd numbers in the list.')
+code = doc.add_paragraph()
+code.add_run('''n = int(input("Enter the number of elements: "))
+dynamic_list = []
+
+# Build list dynamically from user input
+for i in range(n):
+    element = int(input("enter element: "))
+    dynamic_list.append(element)
+
+print("The dynamic list is:", dynamic_list)
+
+# Calculate sum of even and odd numbers separately
+even_sum = 0
+odd_sum = 0
+
+for i in range(len(dynamic_list)):
+    if dynamic_list[i] % 2 == 0:
+        even_sum += dynamic_list[i]
+    else:
+        odd_sum += dynamic_list[i]
+
+print("Sum of even numbers:", even_sum)
+print("Sum of odd numbers:", odd_sum)''').font.name = 'Consolas'
+
+doc.add_paragraph()
+
+# ============== SECTION 17: MATRIX OPERATIONS ==============
+doc.add_heading('Section 17: Matrix Operations', level=1)
+
+# 17.1 Matrix Addition
+doc.add_heading('17.1 Matrix Addition (addMatrices.py)', level=2)
+doc.add_paragraph('Summary: Matrix addition adds corresponding elements of two matrices. Both matrices must have the same dimensions (rows x columns). Uses nested loops to iterate through each element and the map() function for efficient row input.')
+code = doc.add_paragraph()
+code.add_run('''n = int(input("Enter number of rows: "))
+m = int(input("Enter number of columns: "))
+
+# Input first matrix
+l1 = []
+for i in range(n):
+    a = map(int, input("enter the elements of row: ").split())
+    l1.append(list(a))
+
+# Input second matrix
+l2 = []
+for i in range(n):
+    b = map(int, input("enter the elements of row in second matrix: ").split())
+    l2.append(list(b))
+
+# Add matrices - add corresponding elements
+result = []
+for i in range(n):
+    c = []
+    for j in range(m):
+        c.append(l1[i][j] + l2[i][j])
+    result.append(c)
+
+print("Resultant Matrix is:", result)
+
+# Example: [[1,2],[3,4]] + [[5,6],[7,8]] = [[6,8],[10,12]]''').font.name = 'Consolas'
+
+doc.add_paragraph()
+
+# 17.2 Matrix Multiplication
+doc.add_heading('17.2 Matrix Multiplication (multiplicationMAtrices.py)', level=2)
+doc.add_paragraph('Summary: Matrix multiplication multiplies rows of the first matrix with columns of the second. For A(n×m) × B(m×p), the result is C(n×p). Uses three nested loops: i for rows, j for columns, k for the summation of products.')
+code = doc.add_paragraph()
+code.add_run('''n = int(input("enter number of rows: "))
+m = int(input("enter number of columns: "))
+
+# Input first matrix
+l1 = []
+for i in range(n):
+    a = map(int, input("enter the elements of row "+str(i+1)+": ").split())
+    l1.append(list(a))
+
+# Input second matrix
+l2 = []
+for i in range(n):
+    b = map(int, input("enter the elements of row "+str(i+1)+" for second matrix: ").split())
+    l2.append(list(b))
+
+# Initialize result matrix with zeros
+result = [[0 for j in range(m)] for i in range(n)]
+
+# Matrix multiplication: C[i][j] = sum(A[i][k] * B[k][j])
+for i in range(n):
+    for j in range(m):
+        for k in range(m):
+            result[i][j] += l1[i][k] * l2[k][j]
+
+print("Resultant Matrix is:", result)
+
+# Example: [[1,2],[3,4]] × [[5,6],[7,8]] = [[19,22],[43,50]]
+# Calculation: result[0][0] = 1*5 + 2*7 = 19''').font.name = 'Consolas'
 
 doc.add_paragraph()
 doc.add_page_break()

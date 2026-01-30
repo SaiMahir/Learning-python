@@ -1,6 +1,11 @@
-n = int(input("enter the number you want to search:"))
-l = list(map(int, input("enter elements:").split()))
-if n in l:
-    print(n, "is present in the list")
+l = [1,2,3]
+found = False
+for i in l:
+    if type(i) == list:
+        found = True
+    else:
+        found = False
+if found:
+    print("sublist exists")
 else:
-    print(n, "is not present in the list")
+    print("sublist doesnt exist")

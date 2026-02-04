@@ -1,11 +1,12 @@
-l = list(map(int, input("Enter values in the list: ").split()))
+l = list(map(int,input("enter elemnts:").split()))
 l2 = []
-
 for i in l:
     if i not in l2:
+        l2.append(i)
         count = 0
         for j in l:
             if i == j:
                 count += 1
-        l2.append(i)
-        print(i, "appears", count, "times")
+        print(i,"repeated",count)
+    else:
+        continue 

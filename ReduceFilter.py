@@ -8,7 +8,7 @@ print("Even numbers are:", list(even_numbers))"""
 
 from functools import reduce
 
-numbers  = [1, 2, 3, 4, 5]
+numbers  = map (int, input("enter numbers: ").split())
 product = reduce(lambda a, b: a * b, numbers)
 print(product)
 

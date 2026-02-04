@@ -1,5 +1,5 @@
 l = list(map(int, input("enter elements:").split()))
-
+#iterate from the end to the beginning
 for i in range(len(l)-1, 0, -1):
     print(i)
     if l[i] == l[i-1]:

@@ -7,7 +7,7 @@ add = lambda x,y : x+y
 sub = lambda x,y: x-y
 multiply = lambda x,y: x*y
 divide = lambda x,y: x/y
-gi = lambda x,y: max(x,y)
+gi = lambda x,y: x if x>y else y 
 print(sqr(n))
 print(add(n,p))
 print(sub(n,p))

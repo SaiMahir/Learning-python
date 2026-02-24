@@ -19,4 +19,7 @@ s.add(6)
 print("Set after adding element 6:", s)
 s.clear()
 print("Set after clearing all elements:", s)
+# Copying a set
+s_copy = s1.copy()
+print("Copy of s1:", s_copy)
 

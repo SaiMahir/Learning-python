@@ -1,1 +1,5 @@
-result = [[0 for j in range(m)] for i in range(n)]
+students = [
+    {"name": "Alice", "age": 20, "grade": "A"},
+    {"name": "Bob", "age": 22, "grade": "B"},
+    {"name": "Charlie", "age": 21, "grade": "A"},
+            ]

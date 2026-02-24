@@ -121,7 +121,7 @@ for i in l:
         l1.append(i)
 l = l1
 print(l1)'''
-l = {'hello','blqrw', 'pythn'}
+"""l = {'hello','blqrw', 'pythn'}
 l = list(l)
 l1 = []
 print(l)
@@ -131,5 +131,5 @@ for i in l:
     else:
         l1.append(i)
 
-print(l1)
+print(l1)""" 
 

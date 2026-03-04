@@ -1,0 +1,3 @@
+f= open("car.txt","w")
+f.write("I have a car")
+f.close()

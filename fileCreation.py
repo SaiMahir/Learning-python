@@ -1,0 +1,5 @@
+file = open("test.txt","w+")
+file.write("hellow world")
+file.seek(0)
+print(file.read())
+file.close()

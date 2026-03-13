@@ -1,0 +1,3 @@
+{'name': 'sai', 'roll': 1, 'grade': 'A', 'section': 'A', 'semester': '1'}
+{'name': 'nig', 'roll': 3, 'grade': 'C', 'section': 'C', 'semester': '2'}
+{'name': 'mob', 'roll': 4, 'grade': 'C', 'section': 'D', 'semester': '4'}

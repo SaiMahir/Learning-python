@@ -9,7 +9,11 @@ for i in range(n):
     grade = input("Enter grade: ")
     sec = input("Enter section: ")
     sem = input("Enter semester: ")
-    d = {"name": name, "roll": roll, "grade": grade, "section": sec, "semester": sem}
+    d = {"name": name,
+         "roll": roll,
+         "grade": grade,
+         "section": sec,
+         "semester": sem}
     lst.append(d)
 for i in lst:
     file.write(str(i) + "\n")

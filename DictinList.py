@@ -9,7 +9,7 @@ students = []
 n = int(input("Enter number of students: "))
 for i in range(n):
     name = input("Enter name: ")
-    roll = int(input("Enter age: "))
+    roll = int(input("Enter roll: "))
     grade = input("Enter grade: ")
     student = {"name": name, "roll": roll, "grade": grade}
     students.append(student)

@@ -33,14 +33,14 @@ for i, j in fruits.items():
         a[i] = j
 print(a)'''
 
-l = [1,2,3,4,5]
+'''l = [1,2,3,4,5]
 d = {}
 for i in l:
     if i % 2 == 0:
         d[i] = 'Even'
     else:
         d[i] = 'Odd'
-print("Dictionary:", d)
+print("Dictionary:", d)'''
 
 
         

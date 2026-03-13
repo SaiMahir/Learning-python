@@ -5,7 +5,7 @@ for i in range(n):
     value = input("Enter name: ")
     student[key] = value
 print("Dictionary:", student)'''
-
+#taking input in run time and creating a dictionary
 keys = []
 values = []
 n = int(input("Enter number of students: "))

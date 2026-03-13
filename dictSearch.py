@@ -5,8 +5,8 @@ students = [
             ]
 
 search_name = input("Enter name to search: ")
-for student in students:
-    if student["name"] == search_name:
-        print("Student found:", student)
+for i in students:
+    if i["name"] == search_name:
+        print("Student found:", i)
         exit()
 print("Student not found")
